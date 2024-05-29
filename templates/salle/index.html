@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+ <!-- Sidebar -->
+ <div class="sidebar d-none d-lg-block">
+  <a href="#" class="bg-secondary text-warning"><strong>Salles</strong></a>
+  <a href="#">Libres</a>
+  <a href="#">Occupées</a>
+  <a href="#">Cours</a>
+  <a href="#">Profs</a>
+</div>
+
+ <!-- Main Content -->
+<div class="main-content ">
+  <div class="container">
+    <h1 class="my-4">Salles de Cours</h1>
+    <div class="row">
+
+      {% for salle in salles %}
+      <div class="col-md-4 ">
+        <div class="card salle">
+          <div class="card-body">
+            <h5 class="card-title">{{ salle.numero }}</h5>
+            <p class="card-text">Capacité: {{ salle.capacite }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+

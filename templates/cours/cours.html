@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+ <!-- Sidebar -->
+ <div class="sidebar d-none d-lg-block">
+    <a href="#">Salles</a>
+    <a href="#">Libres</a>
+    <a href="#">Occupées</a>
+    <a href="#" class="bg-secondary text-warning"><strong>Cours</strong></a>
+    <a href="#">Profs</a>
+  </div>
+
+  <div class="main-content ">
+        <div class="container">
+            <h1>La page de cours</h1>
+
+            {% for cour in cours %}
+            <p>{{cour.libelle}} </p>
+            <p>{{cour.jour}} </p>
+            <p>{{cour.heure}} </p>
+            <p>{{cour.salle}} </p>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+{% endblock content %}
