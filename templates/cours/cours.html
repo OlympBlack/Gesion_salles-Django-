@@ -4,27 +4,32 @@
 
  <!-- Sidebar -->
  <div class="sidebar d-none d-lg-block">
-    <a href="#">Salles</a>
+    <a href="{% url 'index'%}">Salles</a>
     <a href="#">Libres</a>
     <a href="#">Occupées</a>
-    <a href="#" class="bg-secondary text-warning"><strong>Cours</strong></a>
-    <a href="#">Profs</a>
-  </div>
+    <a href="{% url 'cours'%}" class="bg-secondary text-warning"><strong>Cours</strong></a>
+    <a href="{% url 'professeur'%}">Profs</a>
+ </div>
 
-  <div class="main-content ">
-        <div class="container">
-            <h1>La page de cours</h1>
+<div class="main-content">
+    <div class="container mt-4">
+        <h3 class="mb-4" style="text-align: center;">Les cours enseignés</h3>
 
+        <div class="row">
             {% for cour in cours %}
-            <p>{{cour.libelle}} </p>
-            <p>{{cour.jour}} </p>
-            <p>{{cour.heure}} </p>
-            <p>{{cour.salle}} </p>
-
+            <div class="col-md-4 mb-4">
+                <div class="card case">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ cour.libelle }}</h5>
+                        <p class="card-text"><strong>Jour:</strong> {{ cour.jour }}</p>
+                        <p class="card-text"><strong>Heure:</strong> {{ cour.heure }}</p>
+                        <p class="card-text"><strong>Salle:</strong> {{ cour.salle }}</p>
+                    </div>
+                </div>
+            </div>
             {% endfor %}
-
         </div>
-    </div>
-
+    </div> 
+</div>
 
 {% endblock content %}

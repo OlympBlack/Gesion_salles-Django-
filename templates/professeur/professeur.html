@@ -4,19 +4,31 @@
 
  <!-- Sidebar -->
  <div class="sidebar d-none d-lg-block">
-    <a href="#">Salles</a>
+    <a href="{% url 'index'%}">Salles</a>
     <a href="#">Libres</a>
     <a href="#">Occupées</a>
-    <a href="#">Cours</a>
-    <a href="#" class="bg-secondary text-warning"><strong>Prof</strong></a>
+    <a href="{% url 'cours'%}">Cours</a>
+    <a href="{% url 'professeur'%}" class="bg-secondary text-warning"><strong>Prof</strong></a>
+ </div>
 
-  </div>
+<div class="main-content">
+    <div class="container mt-4">
+        <h3 class="mb-4" style="text-align: center;">Liste des Professeurs</h3>
 
-  <div class="main-content ">
-        <div class="container">
-            <h1>Liste des professeurs</h1>
+        <div class="row">
+            {% for professeur in professeurs %}
+            <div class="col-md-4 mb-4">
+                <div class="card case">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ professeur.pseudo }}</h5>
+                        <p class="card-text"><strong>Téléphone:</strong> {{ professeur.telephone }}</p>
+                        <p class="card-text"><strong>Cours:</strong> {{ professeur.cours }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-    </div>
-
+    </div> 
+</div>
 
 {% endblock content %}

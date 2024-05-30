@@ -6,4 +6,4 @@ class Salle(models.Model):
     capacite = models.IntegerField() 
 
     def __str__(self):
-        return f"Salle {self.numero} - {self.batiment}"
+        return self.numero

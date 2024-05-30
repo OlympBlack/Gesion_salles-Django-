@@ -58,7 +58,7 @@ body {
       margin-left: 0;
     }
   }
-  .salle:hover{
+  .case:hover{
     background-color: rgb(224, 220, 220);
     transition: 0.1;
   }
