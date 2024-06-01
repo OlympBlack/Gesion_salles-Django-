@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestion des Emplois du Temps - Lycée Technique de Natitingou</title>
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css'%}">
   <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css'%}">
 
@@ -26,21 +27,21 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse " id="navbarNav">
-      <ul class="navbar-nav ml-auto d-lg-none">
-        <li class="nav-item">
-          <a class="nav-link" href="">Salles</a>
+      <ul class="navbar-nav ml-5 d-lg-none">
+        <li class="nav-item ">
+          <a class="nav-link ml-5" href="{% url 'index'%}">Total Salles</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Libres</a>
+          <a class="nav-link" href="{% url 'salles_libres'%}">Salles Libres</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Occupées</a>
+          <a class="nav-link" href="#">Salles Occupées</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cours</a>
+          <a class="nav-link" href="{% url 'cours'%}">Cours Enseignés</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profs</a>
+          <a class="nav-link" href="{% url 'professeur'%}">Nos Professeurs</a>
         </li>
       </ul>
     </div>
@@ -56,7 +57,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>Contactez-nous: <a href="https://wa.me/22945454545" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> +229 45 45 45 45</a></p>
+    <p>Contactez-nous: <a href="https://wa.me/22945454545" class="btn btn-whatsapp"><i class="fa fa-whatsapp"></i> +229 45 45 45 45</a></p>
     <p><a href="https://www.facebook.com" class="text-white">Facebook</a> | <a href="https://www.lntignou.org" class="text-white">Site Web</a></p>
   </footer>
 

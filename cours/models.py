@@ -8,7 +8,8 @@ class Cours(models.Model):
         ('Mardi', 'Mardi'), 
         ('Mercredi', 'Mercredi'), 
         ('Jeudi', 'Jeudi'), 
-        ('Vendredi', 'Vendredi')
+        ('Vendredi', 'Vendredi'),
+         ('Samedi', 'Samedi')
         )
     HEURES = (
         ('07h-10h', '07h-10h'),

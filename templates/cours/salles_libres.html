@@ -1,0 +1,50 @@
+<!-- cours/templates/cours/salles_libres.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Salles Libres</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
+{% extends 'main.html' %}
+
+{% block content %}
+
+ <!-- Sidebar -->
+ <div class="sidebar d-none d-lg-block">
+    <a href="{% url 'index'%}">Total Salles</a>
+    <a href="{% url 'salles_libres'%}" class="bg-secondary text-warning"><strong>Salles Libres</strong></a>
+    <a href="{% url 'salles_occupees'%}">Salles Occupées</a>
+    <a href="{% url 'cours'%}">Cours Enseignés</a>
+    <a href="{% url 'professeur'%}">Nos Professeurs</a>
+ </div>
+
+ <div class="main-content">
+    <div class="container mt-4">
+        <h3 style="text-align: center;">Salles Libres aujourd'hui ( {{ jour }}{% if heure %} à l'heure {{ heure }}{% endif %})</h3>
+        <div class="row">
+
+            {% for salle in salles_libres %}
+            <div class="col-lg-2 col-md-3 col-sm-6 col-6 mb-2 ">
+                <div class="card case">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ salle.batiment }}-{{ salle.numero }}</h5>
+                        <p class="card-text">Capacité: {{ salle.capacite }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div> 
+</div>
+
+{% endblock content %}
+
